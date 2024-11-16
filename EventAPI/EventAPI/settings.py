@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,8 +45,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework_simplejwt'
 ]
+
+AUTH_USER_MODEL = 'events.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,8 +104,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
-print(os.getenv('DB_ENGINE'), os.getenv('DB_NAME'),os.getenv('DB_USER'),
-      os.getenv('DB_PASSWORD'),os.getenv('DB_HOST'),os.getenv('DB_PORT'))
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
