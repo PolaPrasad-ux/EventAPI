@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from .models import User, Event, Ticket
-from .serializers import UserSerializer, EventSerializer, TicketSerializer
+from .serializers import EventSerializer
 from django.core.exceptions import ValidationError
 
 @api_view(['POST'])
