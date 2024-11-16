@@ -55,8 +55,8 @@ This project is a robust Event Management and Ticketing System built using Djang
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/event-management-system.git
-   cd event-management-system
+   git clone https://github.com/PolaPrasad-ux/EventAPI/tree/master/EventAPI
+   cd EventAPI
    ```
 
 2. **Set Up a Virtual Environment**:
